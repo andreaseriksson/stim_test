@@ -1,6 +1,19 @@
+<h1><%= @count.to_i %></h1>
+
 <a href="#"
    data-reflex="click->ExampleReflex#increment"
    data-step="1"
    data-count="<%= @count.to_i %>">
-   Increment <%= @count.to_i %>
+   Increment
 </a>
+
+<br>
+<a href="#"
+   data-controller="home"
+   data-count="<%= @count.to_i %>"
+   data-action="click->home#increment">
+   Increment through stimulus controller
+</a>
+<br>
+
+<%= link_to 'Increment from controller and channels', increment_path, remote: true %>
